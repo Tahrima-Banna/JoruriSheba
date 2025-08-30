@@ -85,14 +85,26 @@
        
     })
 
-  
-  // let Ucopy= 2;
+  //task 4
+  let Ucopy= 2;
 
-  // document.getElementById("Hcopy").addEventListener('click',
-  //    function(){
-  //      alert(``)
-  //    }
-  // )
+  const tCopy = getElement('Hcopy');
+  const CopyBtns = document.getElementsByClassName('CopyClass');
+  
+
+  for (let CopyBtn of CopyBtns) {
+    CopyBtn.addEventListener("click",function (e) {
+    e.preventDefault();
+      const hotlineNumber = CopyBtn.getAttribute("data-number");
+         navigator.clipboard.writeText(hotlineNumber);
+        alert('The number has copied: ' + hotlineNumber);
+      Ucopy++;
+      tCopy.innerText = Ucopy;
+    });
+  }
+
+  
+ 
   
 
 
