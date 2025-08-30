@@ -46,6 +46,7 @@
     
       const CartContainer = document.getElementById('product-cart');
       const newCart = document.createElement("div");
+      newCart.classList.add('historyItem');
       const timeData = [];
       const data = {
       
@@ -71,28 +72,30 @@
 
   //task 3
 
+  document.getElementById('Hclear').addEventListener('click',
+    function(e){
+      e.preventDefault();
+      const historyItems = document.querySelectorAll('#product-cart .historyItem');
+  
+  for (let Hitem of historyItems) {
+    Hitem.remove();
+  }
+
+ 
+       
+    })
+
+  
+  // let Ucopy= 2;
+
+  // document.getElementById("Hcopy").addEventListener('click',
+  //    function(){
+  //      alert(``)
+  //    }
+  // )
   
 
-  // // document.getElementById("Call").addEventListener("click",
-  //   function(e){
-  //       e.preventDefault();
-  //       const CartContainer = document.getElementById('product-cart');
-  //       console.log(CartContainer);
-  //       const newCart = document.createElement("div")
-  //      newCart.innerHTML=`<div class=" bg-white mt-2 mb-2 flex justify-between w-11/12 mx-auto rounded-xl shadow p-4">
-  //           <div>
-  //           <h1 class="p-[5px] font-bold">call me right now</h1>
-  //          <span class="font-hind text-gray-500">999</span>
-  //          </div>
-  //          <div>
-  //            3AM
-  //          </div>
-  //       </div>`
-  //       CartContainer.append(newCart)
-  //       console.log(newCart)
 
-
-  //   })
 
 
 
