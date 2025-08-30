@@ -19,6 +19,7 @@
      return element;
    }
 
+   let Ucoins =100;
    
    
    const cartbtns = document.getElementsByClassName('CallBtn');
@@ -33,7 +34,16 @@
       const productTitle = cartButton.parentNode.parentNode.children[1].children[0].innerText
        
       const productNumber = cartButton.parentNode.parentNode.children[1].children[2].innerText
-       
+
+      if (Ucoins < 20) {
+      alert("Not enough coins! You need at least 20 coins to make a call.");
+      return; 
+    } 
+      Ucoins -= 20;
+    getElement('Hcoin').innerText = Ucoins;
+     
+    alert(`Calling ${productTitle} at ${productNumber}`);
+    
       const CartContainer = document.getElementById('product-cart');
       const newCart = document.createElement("div");
       const timeData = [];
@@ -42,7 +52,7 @@
         date:new Date().toLocaleTimeString()
     }
 
-     
+    
     
 
       newCart.innerHTML=`<div class=" bg-white mt-2 mb-2 flex justify-between w-11/12 mx-auto rounded-xl shadow p-4">
@@ -58,6 +68,10 @@
 
     })
    }
+
+  //task 3
+
+  
 
   // // document.getElementById("Call").addEventListener("click",
   //   function(e){
